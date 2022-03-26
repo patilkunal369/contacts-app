@@ -14,7 +14,9 @@ const GlobalStyles = createGlobalStyle`
     --Light_grayish_cyan: hsl(189, 41%, 97%);
     --White: hsl(0, 0%, 100%);
 }
-* {
+*,
+p,
+a {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -27,12 +29,18 @@ html{
 }
 
 body{
-   
-   min-height: 100vh; 
-   background-color: #C5E4E7 ;
-   font-family: "Space Mono", sans-serif ;
+    
+    min-height: 100vh; 
+    background-color: #C5E4E7 ;
+    font-family: "Space Mono", sans-serif ;
 
+}
 
+.App{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 `;
 export default GlobalStyles;

@@ -1,8 +1,12 @@
 import React from "react";
 import Contact from "../../components/Contact";
+import ContactDetails from "../../components/ContactDetails";
 import useHeader from "../../helpers/useHeader";
-import {ButtonsWrapper, DetailsWrapper, GridWrapper, StyledButton, Wrapper, FlexWrapper} from './Contacts.styles';
-import { contactList, contactList_1, contactList_2 } from "./mockData";
+import {
+  ButtonsWrapper, FlexWrapper, StyledButton,
+  Wrapper
+} from "./Contacts.styles";
+import { contactList_1 } from "./mockData";
 
 const ContactsContainer = () => {
   useHeader("All Contacts");
@@ -16,17 +20,16 @@ const ContactsContainer = () => {
       </ButtonsWrapper>
       <FlexWrapper>
         <Wrapper>
-          {/* <div>
-            <label>Name</label>
-            <label>E-mail</label>
-          </div> */}
-          <ul>
-            {contactList_1.map(({ name, email, profileImage }) => (
-              <Contact name={name} email={email} profileImage={profileImage} />
-            ))}
-          </ul>
+          {contactList_1.map(({ name, email, profileImage, phone }) => (
+            <Contact
+              name={name}
+              email={email}
+              profileImage={profileImage}
+              phone={phone}
+            />
+          ))}
         </Wrapper>
-        <DetailsWrapper>DetailsWrapper</DetailsWrapper>
+        <ContactDetails />
       </FlexWrapper>
     </div>
   );

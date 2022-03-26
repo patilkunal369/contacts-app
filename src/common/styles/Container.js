@@ -4,8 +4,9 @@ export const Container = styled.div`
   display: grid;
   grid-template-columns: min-content 1fr;
   gap: 1rem;
-  min-height: 100vh;
+  max-width: 80vw;
   background-color: #ffffff;
   padding: 1rem;
   border-radius: 1rem;
+  flex-grow: 1;
 `;

@@ -7,9 +7,10 @@ export const ButtonsWrapper = styled.div`
 `;
 
 export const StyledButton = styled.button`
-  padding: 0.6rem;
+  padding: 0.4rem 0.6rem;
   border-radius: 0.3rem;
   font-size: 0.8rem;
+
   ${(props) => {
     switch (props.color) {
       case "primary":
@@ -30,24 +31,21 @@ export const StyledButton = styled.button`
   &:hover {
     background-color: var(--Strong_cyan);
     cursor: pointer;
-    color: var(--Very_dark_cyan) ;
+    color: var(--Very_dark_cyan);
   }
 `;
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.ul`
   gap: 1rem;
   padding: 0.5rem;
   border-radius: 1rem;
   height: 100%;
   flex: 1;
+  width: 100%;
 `;
 export const FlexWrapper = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 0.6fr 0.4fr;
   gap: 1rem;
   height: 100%;
-`;
-export const DetailsWrapper = styled.div`
-  background-color: var(--Very_dark_cyan);
-  border-radius: 1rem;
-  flex: 1;
 `;
