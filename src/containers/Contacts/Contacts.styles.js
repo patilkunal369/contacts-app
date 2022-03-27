@@ -43,7 +43,7 @@ export const Wrapper = styled.ul`
   flex: 1;
   width: 100%;
 `;
-export const FlexWrapper = styled.div`
+export const GridWrapper = styled.div`
   display: grid;
   grid-template-columns: 0.6fr 0.4fr;
   gap: 1rem;

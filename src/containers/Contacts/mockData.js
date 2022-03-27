@@ -1,4 +1,4 @@
-export const contactList_1 = [
+export const mockContactList = [
   {
     id: 1,
     profileImage: "https://randomuser.me/api/portraits/men/23.jpg",
@@ -143,5 +143,4 @@ export const contactList_1 = [
       bs: "e-enable innovative applications",
     },
   },
-  
 ];

@@ -3,7 +3,7 @@ import {
   ButtonsWrapper,
   ContentWrapper,
   DetailsHeader,
-  DetailsWrapper
+  DetailsWrapper,
 } from "./ContactsDetails.styles";
 
 const ContactDetails = () => {
@@ -11,11 +11,11 @@ const ContactDetails = () => {
     <DetailsWrapper>
       <div className="header-wrapper">
         <DetailsHeader>
-          <img src="https://randomuser.me/api/portraits/men/23.jpg" />
-          <div className="name-email">
-            <p className="name">Leanne Graham</p>
-            <p className="email">Sincere@april.biz</p>
-          </div>
+          <img
+            src="https://randomuser.me/api/portraits/men/23.jpg"
+            alt="profileImage"
+          />
+          <p className="name">Leanne Graham</p>
           <ButtonsWrapper>
             <button> Add to favorites</button>
             <button>Edit</button>

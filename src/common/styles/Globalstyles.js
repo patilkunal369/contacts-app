@@ -24,23 +24,18 @@ a {
 }
 
 html{
-    font: 62.5%; 
+    font: 62.5%;
     scroll-behavior: smooth;
 }
 
 body{
-    
-    min-height: 100vh; 
+
+    min-height: 100vh;
     background-color: #C5E4E7 ;
     font-family: "Space Mono", sans-serif ;
 
 }
 
-.App{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
+
 `;
 export default GlobalStyles;

@@ -4,6 +4,8 @@ export const SideNavContainer = styled.nav`
   background-color: #00474b;
   border-radius: 0.5rem;
 
+  grid-row: 1 / 4;
+
   ul {
     display: flex;
     flex-direction: column;
@@ -19,8 +21,5 @@ export const SideNavContainer = styled.nav`
 
   li:last-child {
     margin-top: auto;
-  }
-
-  @media screen {
   }
 `;

@@ -2,7 +2,7 @@ import styled from "styled-components";
 export const DetailsWrapper = styled.div`
   background-color: var(--Very_dark_cyan);
   border-radius: 1rem;
-  flex: 1;
+  height: 90%;
   position: relative;
 
   .header-wrapper {
@@ -19,7 +19,7 @@ export const DetailsHeader = styled.div`
   grid-template-rows: 1fr 1fr;
   position: absolute;
   background-color: transparent;
-  top: 3%;
+  top: 5%;
   left: 1rem;
   width: 100%;
 
@@ -30,21 +30,11 @@ export const DetailsHeader = styled.div`
     grid-row: 1 / 3;
   }
 
-  .name-email {
-    margin: 1rem 0 0 1rem;
-    background-color: unset;
-  }
-
   .name {
     color: var(--Very_dark_cyan);
     font-size: 2rem;
     font-weight: bold;
-  }
-
-  .email {
-    color: var(--Dark_grayish_cyan_1);
-    font-size: 1rem;
-    font-weight: 200;
+    margin: 2rem 0 0 1rem;
   }
 `;
 
@@ -69,13 +59,13 @@ export const ButtonsWrapper = styled.div`
 
 export const ContentWrapper = styled.div`
   margin-top: 3rem;
-  padding: 1rem;
+  padding: 2rem;
   color: var(--Light_grayish_cyan_1);
 
   h3 {
     font-size: 1.4rem;
     font-weight: bold;
-    padding: 0%.3rem;
+    padding: 0.3rem;
   }
 
   p {

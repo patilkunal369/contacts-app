@@ -2,7 +2,7 @@ import React from "react";
 import { ContactWrapper } from "./Contact.styles";
 import Tag from "./Tag";
 
-const Contact = ({ name, email, profileImage, phone }) => {
+const Contact = ({ contact: { name, email, profileImage, phone } }) => {
   return (
     <ContactWrapper>
       <img src={profileImage} alt="profile" />
