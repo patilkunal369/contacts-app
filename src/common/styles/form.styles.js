@@ -2,31 +2,36 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   max-width: 430px;
-  width: 100%;
-  height: max-content;
   background: var(--White);
-  border-radius: 10px;
+  border-radius: 1rem;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   margin: auto;
-  margin-top: 5rem;
+  margin-top: 3rem;
+  position: relative;
 
   .form {
-    padding: 30px;
+    padding: 2rem;
     background-color: var(--White);
     transition: margin-left 0.18s ease;
   }
 
-  .form .title {
-    font-size: 27px;
-    font-weight: 600;
+  .blur {
+    filter: blur(1.5px);
+  }
+
+  .loader {
+    position: absolute;
+    top: 45%;
+    left: 43%;
+    z-index: 10;
   }
 
   .form .input-field {
     position: relative;
-    height: 50px;
+    height: 3rem;
     width: 100%;
-    margin-top: 30px;
+    margin-bottom: 3rem;
   }
 
   .input-field input {
@@ -42,8 +47,23 @@ export const Container = styled.div`
     transition: all 0.2s ease;
   }
 
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+    box-shadow: 0 0 0 30px white inset !important;
+  }
+
   .input-field input:is(:focus, :valid) {
     border-bottom-color: var(--Very_dark_cyan);
+  }
+  .input-field .error {
+    position: absolute;
+    margin-top: 1rem;
+    top: 100%;
+    color: var(--Error);
+    font-size: 0.7rem;
   }
 
   .input-field i {
@@ -102,7 +122,7 @@ export const Container = styled.div`
     margin-top: 35px;
   }
 
-  .form .button input {
+  .form .button button {
     border: none;
     color: var(--White);
     font-size: 17px;
@@ -112,10 +132,16 @@ export const Container = styled.div`
     background-color: var(--Very_dark_cyan);
     cursor: pointer;
     transition: all 0.3s ease;
+    padding: 1rem;
+    width: 100%;
   }
 
-  .button input:hover {
+  .button button:hover {
     background-color: var(--Strong_cyan);
+  }
+
+  .button button:disabled {
+    background-color: var(--Light_grayish_cyan_1);
   }
 
   .form .login-signup {

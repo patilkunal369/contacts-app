@@ -13,6 +13,7 @@ const GlobalStyles = createGlobalStyle`
     --Light_grayish_cyan_1: hsl(185, 41%, 84%);
     --Light_grayish_cyan: hsl(189, 41%, 97%);
     --White: hsl(0, 0%, 100%);
+    --Error: rgb(242,100,92)
 }
 *,
 p,

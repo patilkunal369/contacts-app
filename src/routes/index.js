@@ -5,24 +5,29 @@ import CreateContact from "../containers/CreateContact";
 
 const routes = [
   {
-    path: "/",
-    component: <Contacts />,
-    title: "Contacts",
-  },
-  {
     path: "/auth/register",
-    component: <Register />,
+    component: Register,
     title: "Register",
+    needsAuth: false,
   },
+
   {
     path: "/auth/login",
-    component: <Login />,
+    component: Login,
     title: "Login",
+    needsAuth: false,
   },
   {
     path: "/contacts/create",
-    component: <CreateContact />,
+    component: CreateContact,
     title: "Create Contact",
+    needsAuth: true,
+  },
+  {
+    path: "/",
+    component: Contacts,
+    title: "Contacts",
+    needsAuth: true,
   },
 ];
 

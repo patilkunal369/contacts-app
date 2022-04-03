@@ -1,15 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Contact from "../../components/Contact";
 import ContactDetails from "../../components/ContactDetails";
 import { useGlobalContext } from "../../context/GlobalProvider";
+import axiosInstance from "../../helpers/axios";
 import useHeader from "../../helpers/useHeader";
-import {
-  ButtonsWrapper,
-  FlexWrapper,
-  GridWrapper,
-  StyledButton,
-  Wrapper,
-} from "./Contacts.styles";
+import { GridWrapper, Wrapper } from "./Contacts.styles";
 
 const ContactsContainer = () => {
   useHeader("All Contacts");
@@ -23,6 +18,7 @@ const ContactsContainer = () => {
   return (
     <GridWrapper>
       <Wrapper>
+        {console.log(localStorage.token)}
         {contactList.map((contact, i) => (
           <Contact key={i} contact={contact} />
         ))}

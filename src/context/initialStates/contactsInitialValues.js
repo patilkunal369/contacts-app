@@ -1,7 +1,13 @@
 import { mockContactList } from "../../containers/Contacts/mockData";
 
-export default {
+export const contactsInitialValues = {
   contacts: {
+    loading: false,
+    error: false,
     list: mockContactList,
+  },
+  addContacts: {
+    loading: false,
+    error: false,
   },
 };
