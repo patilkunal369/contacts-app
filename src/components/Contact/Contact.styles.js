@@ -1,17 +1,28 @@
 import styled from "styled-components";
+import { css } from "styled-components";
 
 export const ContactWrapper = styled.li`
   display: grid;
   grid-template-columns: max-content max-content 2rem 1fr 1fr;
   align-items: center;
-  background-color: var(--Light_grayish_cyan);
   margin-bottom: 0.5rem;
-  border: var(--Light_grayish_cyan) solid 1.5px;
+
   padding: 0.5rem;
   border-radius: 1rem;
+  ${(props) => {
+    if (props.isSelected) {
+      return css`
+        border: var(--Strong_cyan) solid 1.5px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      `;
+    }
+    return css`
+      border: var(--Light_grayish_cyan) solid 1.5px;
+    `;
+  }}
+  background-color: var(--Light_grayish_cyan);
 
   &:hover {
-    border: var(--Strong_cyan) solid 1.5px;
     cursor: pointer;
     border-radius: 1rem;
   }

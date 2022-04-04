@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { logout } from "../../context/actions/auth/logout";
 import { useGlobalContext } from "../../context/GlobalProvider";
 import { isPathRegisterLogin } from "../../helpers/helperMethods";
 import { isAuthenticated } from "../../helpers/isAuthenticated";
@@ -8,6 +9,9 @@ import { SideNavContainer } from "./SideNav.styles";
 
 const SideNav = () => {
   const { pathname } = useLocation();
+  const history = useHistory();
+
+  const { authDispatch } = useGlobalContext();
 
   return (
     <SideNavContainer>
@@ -41,7 +45,7 @@ const SideNav = () => {
             </Link>
           </li>
           <li>
-            <Link to="/auth/login">
+            <Link to="#" onClick={() => logout(history)(authDispatch)}>
               <img
                 src="https://img.icons8.com/color/48/000000/circled-user-male-skin-type-4--v1.png"
                 alt="User"

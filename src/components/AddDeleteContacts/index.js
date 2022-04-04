@@ -1,8 +1,6 @@
 import React from "react";
-import {
-  ButtonsWrapper,
-  StyledButton,
-} from "../../containers/Contacts/Contacts.styles";
+import { StyledButton } from "../../common/Button/Button.styles";
+import { ButtonsWrapper } from "./AddDeleteContacts.styles";
 
 const AddDeleteContacts = () => {
   return (

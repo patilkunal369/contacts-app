@@ -2,12 +2,14 @@ import { mockContactList } from "../../containers/Contacts/mockData";
 
 export const contactsInitialValues = {
   contacts: {
-    loading: false,
-    error: false,
-    list: mockContactList,
+    isLoading: false,
+    isError: false,
+    error: "",
+    list: null,
+    selectedContact: {},
   },
   addContacts: {
     loading: false,
-    error: false,
+    error: "",
   },
 };

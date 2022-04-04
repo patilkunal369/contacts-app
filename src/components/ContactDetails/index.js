@@ -1,4 +1,6 @@
 import React from "react";
+import Button from "../../common/Button";
+import { useGlobalContext } from "../../context/GlobalProvider";
 import {
   ButtonsWrapper,
   ContentWrapper,
@@ -7,19 +9,25 @@ import {
 } from "./ContactsDetails.styles";
 
 const ContactDetails = () => {
+  const {
+    contactsState: {
+      contacts: { selectedContact },
+    },
+  } = useGlobalContext();
+
+  const { id, name, email, phone, address, company, profileImage } =
+    selectedContact;
+
   return (
     <DetailsWrapper>
       <div className="header-wrapper">
         <DetailsHeader>
-          <img
-            src="https://randomuser.me/api/portraits/men/23.jpg"
-            alt="profileImage"
-          />
-          <p className="name">Leanne Graham</p>
+          <img src={profileImage} alt="profileImage" />
+          <p className="name">{name}</p>
           <ButtonsWrapper>
-            <button> Add to favorites</button>
-            <button>Edit</button>
-            <button>Delete</button>
+            <Button value="Add to Favourite" color="primary" />
+            <Button value="Edit" color="primary" />
+            <Button value="Delete" />
           </ButtonsWrapper>
         </DetailsHeader>
       </div>
@@ -28,23 +36,27 @@ const ContactDetails = () => {
 
         <div className="content">
           <label>Email</label>
-          <p>Sincere@april.biz</p>
+          <p>{email}</p>
         </div>
 
         <div className="content">
           <label>Mobile</label>
-          <p>1-770-736-8031</p>
+          <p>{phone}</p>
         </div>
 
         <div className="content">
           <label>Address</label>
-          <p>Kulas Light Apt. 556 </p>
-          <p>Gwenborough 92998-3874</p>
+          <p>
+            {address.suite} {address.street}
+          </p>
+          <p>
+            {address.city} {address.zipcode}
+          </p>
         </div>
         <div className="job-details">
           <div className="content">
             <label>Company</label>
-            <p>Romaguera-Crona</p>
+            <p>{company.name}</p>
           </div>
 
           <div className="content">

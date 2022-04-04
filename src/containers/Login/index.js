@@ -50,7 +50,7 @@ const LoginContainer = () => {
       errors.password = "Required";
     }
     // if (password.length < 8) {
-    //   errors.password = "Passwords must be at least 8 charactes long";
+    //   errors.password = "Passwords must be at least 8 characters long";
     // }
 
     return errors;

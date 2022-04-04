@@ -10,4 +10,5 @@ export const HeaderWrapper = styled.header`
   align-items: center;
   background-color: var(--Light_grayish_cyan_1);
   border-radius: 1rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 `;

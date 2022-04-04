@@ -30,11 +30,10 @@ html{
 }
 
 body{
-
     min-height: 100vh;
     background-color: #C5E4E7 ;
     font-family: "Space Mono", sans-serif ;
-
+    padding: 1rem;
 }
 
 

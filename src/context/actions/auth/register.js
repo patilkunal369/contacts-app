@@ -3,7 +3,8 @@ import {
   REGISTER_LOADING,
   REGISTER_SUCCESS,
 } from "../../../constants/actionTypes";
-import axiosInstance from "../../../helpers/axios";
+import { REGISTER } from "../../../constants/API";
+import axiosInstance from "../../../helpers/axiosInstance";
 
 export const register = (values) => (authDispatch) => {
   authDispatch({
@@ -11,8 +12,8 @@ export const register = (values) => (authDispatch) => {
   });
   const { userName: username, email, password } = values;
 
-  axiosInstance
-    .post("/auth/register", { username, email, password })
+  axiosInstance()
+    .post(REGISTER, { username, email, password })
     .then((res) =>
       setTimeout(() => {
         authDispatch({

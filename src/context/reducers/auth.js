@@ -5,7 +5,9 @@ import {
   REGISTER_ERROR,
   REGISTER_LOADING,
   REGISTER_SUCCESS,
+  USER_LOGOUT,
 } from "../../constants/actionTypes";
+import { authInitialValues } from "../initialStates/authInitialValues";
 
 const auth = (state, { type, payload }) => {
   switch (type) {
@@ -39,6 +41,11 @@ const auth = (state, { type, payload }) => {
           isError: true,
           error: payload,
         },
+      };
+    case USER_LOGOUT:
+      return {
+        ...state,
+        auth: authInitialValues,
       };
 
     default:
