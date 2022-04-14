@@ -1,13 +1,11 @@
-import React, { Suspense } from "react";
+import React from "react";
+import Modal from "react-modal";
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  useHistory,
-  RouteProps,
-  Redirect,
+  BrowserRouter as Router, Redirect, Route, Switch
 } from "react-router-dom";
-import { Container } from "../../common/styles/Container";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { Container, Main } from "../../common/styles/Container";
 import GlobalStyles from "../../common/styles/Globalstyles";
 import Provider from "../../context/Provider";
 import { isAuthenticated } from "../../helpers/isAuthenticated";
@@ -24,23 +22,36 @@ const ProtectedRoute = ({ component: Component, needsAuth, ...rest }) => {
       {...rest}
       render={(props) => {
         return (
-          <Container>
-            <SideNav />
-            <MainContainer>
-              <Component {...props} />
-            </MainContainer>
-          </Container>
+          <Main>
+            <Container>
+              <SideNav />
+              <MainContainer>
+                <Component {...props} />
+              </MainContainer>
+            </Container>
+          </Main>
         );
       }}
     />
   );
 };
 
-const App = () => {
-  const history = useHistory();
+Modal.setAppElement("#root");
 
+const App = () => {
   return (
     <div className="App">
+      <ToastContainer
+        position="bottom-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <Provider>
         <GlobalStyles />
         <Router>

@@ -13,12 +13,10 @@ export const getContacts = () => (dispatch) => {
   axiosInstance()
     .get(CONTACTS)
     .then((res) =>
-      setTimeout(() => {
-        dispatch({
-          type: CONTACTS_SUCCESS,
-          payload: res.data,
-        });
-      }, 1000)
+      dispatch({
+        type: CONTACTS_SUCCESS,
+        payload: res.data,
+      })
     )
     .catch((error) =>
       dispatch({

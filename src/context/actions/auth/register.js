@@ -15,12 +15,10 @@ export const register = (values) => (authDispatch) => {
   axiosInstance()
     .post(REGISTER, { username, email, password })
     .then((res) =>
-      setTimeout(() => {
-        authDispatch({
-          type: REGISTER_SUCCESS,
-          payload: res.data,
-        });
-      }, 1000)
+      authDispatch({
+        type: REGISTER_SUCCESS,
+        payload: res.data,
+      })
     )
     .catch((error) =>
       authDispatch({

@@ -6,10 +6,18 @@ export const contactsInitialValues = {
     isError: false,
     error: "",
     list: null,
-    selectedContact: {},
+    selectedContact: mockContactList[0],
   },
-  addContacts: {
-    loading: false,
+  createContacts: {
+    isLoading: false,
+    isError: false,
     error: "",
+    isCreateContactModalOpen: false,
+  },
+  editContacts: {
+    isLoading: false,
+    isError: false,
+    error: "",
+    isEditContactModalOpen: false,
   },
 };

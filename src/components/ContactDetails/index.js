@@ -1,5 +1,7 @@
 import React from "react";
 import Button from "../../common/Button";
+import { OPEN_EDIT_CONTACTS_MODAL } from "../../constants/actionTypes";
+import { addRemoveFavourite } from "../../context/actions/contacts/addToFavourite";
 import { useGlobalContext } from "../../context/GlobalProvider";
 import {
   ButtonsWrapper,
@@ -13,10 +15,20 @@ const ContactDetails = () => {
     contactsState: {
       contacts: { selectedContact },
     },
+    contactDispatch,
+    setIsEditContactModalOpen,
   } = useGlobalContext();
 
-  const { id, name, email, phone, address, company, profileImage } =
+  const { id, name, email, phone, address, company, profileImage, favourite } =
     selectedContact;
+
+  const handleFavourite = () => {
+    addRemoveFavourite(selectedContact)(contactDispatch);
+  };
+
+  const handleEdit = () => {
+    contactDispatch({ type: OPEN_EDIT_CONTACTS_MODAL });
+  };
 
   return (
     <DetailsWrapper>
@@ -25,8 +37,12 @@ const ContactDetails = () => {
           <img src={profileImage} alt="profileImage" />
           <p className="name">{name}</p>
           <ButtonsWrapper>
-            <Button value="Add to Favourite" color="primary" />
-            <Button value="Edit" color="primary" />
+            <Button
+              value={favourite ? "Remove from Favourite" : "Add to Favourite"}
+              color="primary"
+              onClick={handleFavourite}
+            />
+            <Button value="Edit" color="primary" onClick={handleEdit} />
             <Button value="Delete" />
           </ButtonsWrapper>
         </DetailsHeader>
@@ -46,12 +62,8 @@ const ContactDetails = () => {
 
         <div className="content">
           <label>Address</label>
-          <p>
-            {address.suite} {address.street}
-          </p>
-          <p>
-            {address.city} {address.zipcode}
-          </p>
+          <p>{address.street_suite}</p>
+          <p>{address.city}</p>
         </div>
         <div className="job-details">
           <div className="content">

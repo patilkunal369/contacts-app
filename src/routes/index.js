@@ -1,7 +1,6 @@
-import Register from "../containers/Register";
-import Login from "../containers/Login";
 import Contacts from "../containers/Contacts";
-import CreateContact from "../containers/CreateContact";
+import Login from "../containers/Login";
+import Register from "../containers/Register";
 
 const routes = [
   {
@@ -16,12 +15,6 @@ const routes = [
     component: Login,
     title: "Login",
     needsAuth: false,
-  },
-  {
-    path: "/contacts/create",
-    component: CreateContact,
-    title: "Create Contact",
-    needsAuth: true,
   },
   {
     path: "/",

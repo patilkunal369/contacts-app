@@ -3,9 +3,10 @@ import { css } from "styled-components";
 
 export const ContactWrapper = styled.li`
   display: grid;
-  grid-template-columns: max-content max-content 2rem 1fr 1fr;
+  grid-template-columns: max-content max-content 2rem 1fr 1fr min-content;
   align-items: center;
   margin-bottom: 0.5rem;
+  gap: 0.5rem;
 
   padding: 0.5rem;
   border-radius: 1rem;

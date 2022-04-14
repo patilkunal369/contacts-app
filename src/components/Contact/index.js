@@ -3,7 +3,7 @@ import { ContactWrapper } from "./Contact.styles";
 import Tag from "./Tag";
 import { useGlobalContext } from "../../context/GlobalProvider";
 
-const Contact = ({ contact, onClick, isSelected }) => {
+const Contact = ({ contact, onClick }) => {
   const { name, email, profileImage, phone } = contact;
 
   const {
@@ -28,6 +28,7 @@ const Contact = ({ contact, onClick, isSelected }) => {
       <div className="vertical-divider"></div>
       <p className="phone">{phone}</p>
       <Tag />
+      {/* <input type="checkbox" /> */}
     </ContactWrapper>
   );
 };

@@ -1,8 +1,9 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import { isPathRegisterLogin } from "../../helpers/helperMethods";
-import { isAuthenticated } from "../../helpers/isAuthenticated";
 import AddDeleteContacts from "../AddDeleteContacts";
+import CreateContact from "../CreateContact";
+import EditContact from "../EditContact";
 import Header from "../Header";
 
 const MainContainer = ({ children }) => {
@@ -19,7 +20,9 @@ const MainContainer = ({ children }) => {
         <>
           <Header />
           <AddDeleteContacts />
-          <main>{children}</main>
+          <CreateContact />
+          <EditContact />
+          <main style={{ minHeight: "500px" }}>{children}</main>
         </>
       )}
     </>

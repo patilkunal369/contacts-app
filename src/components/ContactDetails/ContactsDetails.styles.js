@@ -46,7 +46,9 @@ export const ButtonsWrapper = styled.div`
 `;
 
 export const ContentWrapper = styled.div`
-  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
   color: var(--Light_grayish_cyan_1);
 
   h3 {
@@ -59,6 +61,8 @@ export const ContentWrapper = styled.div`
     color: var(--Light_grayish_cyan);
     font-size: 1.1rem;
     font-weight: bold;
+
+    margin-top: 0.5rem;
   }
 
   .content {

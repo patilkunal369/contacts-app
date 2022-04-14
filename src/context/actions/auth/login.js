@@ -18,22 +18,18 @@ export const login =
         password,
       })
       .then((res) => {
-        setTimeout(() => {
-          authDispatch({
-            type: LOGIN_SUCCESS,
-            payload: res.data,
-          });
-          localStorage.setItem("token", res.data.access_token);
-        }, 1000);
+        authDispatch({
+          type: LOGIN_SUCCESS,
+          payload: res.data,
+        });
+        localStorage.setItem("token", res.data.access_token);
       })
       .catch((error) => {
-        setTimeout(() => {
-          authDispatch({
-            type: LOGIN_ERROR,
-            payload: error.response
-              ? error.response.data.message
-              : "Could not connect",
-          });
-        }, 1000);
+        authDispatch({
+          type: LOGIN_ERROR,
+          payload: error.response
+            ? error.response.data.message
+            : "Could not connect",
+        });
       });
   };
