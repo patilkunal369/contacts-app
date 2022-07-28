@@ -21,7 +21,6 @@ const ContactForm = ({
     contactDispatch,
     contactsState: {
       contacts: { selectedContact },
-      createContacts: { isLoading, isError, error },
     },
   } = useGlobalContext();
   const validate = ({ firstName, lastName, email, phone }) => {
@@ -81,7 +80,6 @@ const ContactForm = ({
     >
       {() => (
         <Form>
-          {isLoading && <Spinner />}
           <CreateContactWrapper>
             <FormHeader>
               <img
@@ -91,7 +89,6 @@ const ContactForm = ({
               <Input type="text" name="firstName" placeholder="First name" />
               <Input type="text" name="lastName" placeholder="Last name" />
               <ButtonsWrapper>
-                <Button value="Add to Favourite" />
                 <Button value="Reset" type="reset" />
               </ButtonsWrapper>
             </FormHeader>

@@ -20,4 +20,13 @@ export const contactsInitialValues = {
     error: "",
     isEditContactModalOpen: false,
   },
+  deleteContacts: {
+    isLoading: false,
+    isError: false,
+    error: "",
+  },
+  searchContacts: {
+    isSearching: false,
+    searchResults: [],
+  },
 };

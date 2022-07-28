@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import { css } from "styled-components";
 
-
 export const StyledButton = styled.button`
   padding: 0.4rem 0.6rem;
   border-radius: 0.3rem;
   font-size: 0.8rem;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  transition: 0.3s;
 
   ${(props) => {
     switch (props.color) {

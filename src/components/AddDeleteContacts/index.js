@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../../common/Button";
 import { OPEN_CREATE_CONTACTS_MODAL } from "../../constants/actionTypes";
+import { deleteContact } from "../../context/actions/contacts/deleteContact";
 import { useGlobalContext } from "../../context/GlobalProvider";
 import { ButtonsWrapper } from "./AddDeleteContacts.styles";
 

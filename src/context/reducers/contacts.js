@@ -10,11 +10,15 @@ import {
   CREATE_CONTACTS_ERROR,
   CREATE_CONTACTS_LOADING,
   CREATE_CONTACTS_SUCCESS,
+  DELETE_CONTACT_ERROR,
+  DELETE_CONTACT_LOADING,
+  DELETE_CONTACT_SUCCESS,
   EDIT_CONTACT_ERROR,
   EDIT_CONTACT_LOADING,
   EDIT_CONTACT_SUCCESS,
   OPEN_CREATE_CONTACTS_MODAL,
   OPEN_EDIT_CONTACTS_MODAL,
+  SEARCH_CONTACT,
   SELECT_CONTACT,
 } from "../../constants/actionTypes/index";
 const contacts = (state, { type, payload }) => {
@@ -199,7 +203,54 @@ const contacts = (state, { type, payload }) => {
           error: payload,
         },
       };
+    case DELETE_CONTACT_LOADING:
+      return {
+        ...state,
+        deleteContacts: {
+          ...state.deleteContacts,
+          isLoading: true,
+          isError: false,
+        },
+      };
+    case DELETE_CONTACT_SUCCESS:
+      return {
+        ...state,
+        deleteContacts: {
+          ...state.deleteContacts,
+          isLoading: false,
+          isError: false,
+        },
+        contacts: {
+          ...state.contacts,
+          list: state.contacts.list.filter((item) => item.id !== payload),
+          selectedContact:
+            state.contacts.list[0].id === payload
+              ? state.contacts.list[1]
+              : state.contacts.list[0],
+        },
+      };
+    case DELETE_CONTACT_ERROR:
+      return {
+        ...state,
+        deleteContacts: {
+          ...state.deleteContacts,
+          isLoading: false,
+          isError: true,
+          error: payload,
+        },
+      };
 
+    case SEARCH_CONTACT:
+      return {
+        ...state,
+        searchContacts: {
+          isSearching: payload.length > 0 || false,
+          searchResults: state.contacts.list.filter(
+            (contact) =>
+              contact.name?.toLowerCase().search(payload?.toLowerCase()) !== -1
+          ),
+        },
+      };
     default:
       return state;
   }

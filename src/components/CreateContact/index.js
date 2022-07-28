@@ -38,7 +38,7 @@ const CreateContact = () => {
     >
       <>
         <ContactForm
-          setModalOpenDispatchType={OPEN_CREATE_CONTACTS_MODAL}
+          setModalOpenDispatchType={CLOSE_CREATE_CONTACTS_MODAL}
           initialValues={initialValues}
           dispatcherFunction={createContact}
         />

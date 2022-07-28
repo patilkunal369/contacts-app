@@ -7,6 +7,21 @@ export const ContactWrapper = styled.li`
   align-items: center;
   margin-bottom: 0.5rem;
   gap: 0.5rem;
+  transition: 0.5s;
+
+  animation: slideInContact 0.5s ease 1 both;
+
+  @keyframes slideInContact {
+    from {
+      transform: translateX(-10rem);
+      opacity: 0;
+    }
+
+    to {
+      transform: translate(0);
+      opacity: 1;
+    }
+  }
 
   padding: 0.5rem;
   border-radius: 1rem;
@@ -26,6 +41,7 @@ export const ContactWrapper = styled.li`
   &:hover {
     cursor: pointer;
     border-radius: 1rem;
+    border: var(--Strong_cyan) solid 1.5px;
   }
 
   img {

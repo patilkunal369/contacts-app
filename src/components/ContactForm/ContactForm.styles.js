@@ -7,6 +7,21 @@ export const CreateContactWrapper = styled.div`
   width: 100%;
   display: flex;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  transition: 0.5s;
+
+  animation: slideInModal 0.5s ease 1 both;
+
+  @keyframes slideInModal {
+    from {
+      transform: translateY(-10rem);
+      opacity: 0;
+    }
+    to {
+      transform: translate(0);
+      opacity: 1;
+    }
+  }
 `;
 
 const commonInput = css`

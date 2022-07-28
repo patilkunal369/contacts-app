@@ -3,8 +3,26 @@ export const DetailsWrapper = styled.div`
   background-color: var(--Very_dark_cyan);
   border-radius: 1rem;
   width: 100%;
-
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 2;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  animation: slideInDetails 0.5s ease 1 both;
+
+  transition: 0.5s;
+
+  @keyframes slideInDetails {
+    from {
+      transform: translateX(10rem);
+      opacity: 0;
+    }
+
+    to {
+      transform: translate(0);
+      opacity: 1;
+    }
+  }
 
   .header-wrapper {
     max-width: 100%;

@@ -1,8 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Error from "../../common/Error";
 import Spinner from "../../common/Spinner";
 import Contact from "../../components/Contact";
 import ContactDetails from "../../components/ContactDetails";
+import FavouriteCarousel from "../../components/FavouriteCarousel";
 import { getContacts } from "../../context/actions/contacts/getContacts";
 import { selectContact } from "../../context/actions/contacts/selectContact";
 import { useGlobalContext } from "../../context/GlobalProvider";
@@ -22,6 +23,7 @@ const ContactsContainer = () => {
         error,
         selectedContact,
       },
+      searchContacts: { isSearching, searchResults },
     },
   } = useGlobalContext();
 
@@ -32,6 +34,9 @@ const ContactsContainer = () => {
   const handleClick = (contact) => {
     selectContact(contact)(contactDispatch);
   };
+
+  const renderedContactsList = isSearching ? searchResults : contactList;
+
   return (
     <>
       {isLoading && (
@@ -41,14 +46,19 @@ const ContactsContainer = () => {
       )}
 
       {isError && <Error errorMessage={error} />}
-      {contactList && (
+      {renderedContactsList && (
         <GridWrapper>
+          <FavouriteCarousel
+            favourites={renderedContactsList.filter(
+              (contact) => contact.favourite
+            )}
+          />
+          <ContactDetails />
           <ContactsWrapper>
-            {contactList.map((contact, i) => (
+            {renderedContactsList.map((contact, i) => (
               <Contact key={i} contact={contact} onClick={handleClick} />
             ))}
           </ContactsWrapper>
-          <ContactDetails />
         </GridWrapper>
       )}
     </>
